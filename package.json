@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+   "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "start": "node app.js",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci"
+    "build":"digitalocean"
   },
   "keywords": [],
   "author": "",
@@ -20,8 +23,6 @@
     "nodemon": "^2.0.22",
     "xss": "^1.0.14",
     "xss-clean": "^0.1.1"
-  },
-  "engines": {
-    "node": ">=14.x"
   }
+ 
 }
