@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci"
+    "build": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +21,6 @@
     "mongodb": "^5.4.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
-    "scripts": "^0.1.0",
     "xss": "^1.0.14",
     "xss-clean": "^0.1.1"
   }
