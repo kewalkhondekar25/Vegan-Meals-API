@@ -32,7 +32,7 @@ app.use('/api/v1', routes)
 
 
 
-const port = 1998;
+const port = 8080;
 
 const start = async () => {
     try {
