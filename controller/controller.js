@@ -36,7 +36,21 @@ const getAllMeals = async (req, res) => {
     }
 }
 
-//to fetch breakfast meals
+/*TO FETCH SINGLE MEAL BY ID*/
+const getSingleMeal = async (req, res) => {
+   try {
+    const {id : mealID} = req.params
+    const meal = await Meal.findOne({_id:mealID});
+    if(!meal){
+        return res.status(404).json({msg:`No meal with id: ${meal} found`})
+    }
+    res.status(200).json(meal)
+   } catch (error) {
+        res.status(500).json({msg:error})
+   }
+}
+
+/*to fetch breakfast meals*/
 const getBreakfastMeal = async (req, res) => {
     try {
         const meal = await Meal.find({ category: 'breakfast' })
@@ -99,7 +113,7 @@ const createMeals = async (req, res) => {
 }
 */
 
-module.exports = { getAllMeals, /*createMeals*/ getBreakfastMeal, getSouptMeal, getSaladMeal, getDrinkMeal, getMainMeal }
+module.exports = { getAllMeals, getSingleMeal, /*createMeals*/ getBreakfastMeal, getSouptMeal, getSaladMeal, getDrinkMeal, getMainMeal }
 
 
 /*Vegan-Meals-API*/

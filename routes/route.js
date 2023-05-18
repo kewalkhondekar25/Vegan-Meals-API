@@ -1,11 +1,12 @@
 /*Vegan-Meals-API*/
 const express = require('express');
 const router = express.Router();
-const { getAllMeals, getBreakfastMeal,/*createMeals*/ getSouptMeal, getSaladMeal, getDrinkMeal, getMainMeal } = require('../controller/controller')
+const { getAllMeals, getSingleMeal,  getBreakfastMeal,/*createMeals*/ getSouptMeal, getSaladMeal, getDrinkMeal, getMainMeal } = require('../controller/controller')
 
 
 //router.route('/meals').get(getAllMeals).post(createMeals);
 router.route('/meals').get(getAllMeals);
+router.route('/categories/meals/:id').get(getSingleMeal);
 router.route('/meals/breakfast').get(getBreakfastMeal);
 router.route('/meals/soup').get(getSouptMeal);
 router.route('/meals/salad').get(getSaladMeal);
